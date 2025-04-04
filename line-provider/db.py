@@ -9,7 +9,7 @@ Base = declarative_base()
 engine = create_async_engine(settings.db.url)
 session_factory = async_sessionmaker(bind=engine, autoflush=True, autocommit=False)
 
-logger = get_logger()
+logger = get_logger(__name__)
 
 
 async def get_session():
